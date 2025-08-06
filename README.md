@@ -1,17 +1,15 @@
-Fábrica de Software 2025/2
-Nome da equipe: Leonardo & Satty
+## Aula 05/08
 
+-JRE - Java Runtime Envieroment
+    -Ambiente minimo para executar um programa java.
+    - JVM - Java Virtual Machine (java.exe ou javaw.exe)
 
-EXEMPLO{
-Propostas de projeto
-Nome do sistema Ex:(Sistema para Mecânica)
+-JDK - Java Development Kit
+    - Ambiente de DESENVOLVIMENTO (javac.exe) compilador
 
-Funcionalidade 1 Cadastrar dados do Cliente
-Funcionalidade 2 Cadastrar veículos
-Funcionalidade 3
-Nome do sistema Ex:(Sistema para Mecânica)
-
-Funcionalidade 1 Cadastrar dados do Cliente
-Funcionalidade 2 Cadastrar veículos
-Funcionalidade 3
-}/EXEMPLO
+- COMPILAÇÃO
+    1) Escreve um programa em java (arquivo.java)
+    2) Compilação arquivo.java -> javac.exe -> bytecode arquivo.class    
+- EXECUÇÃO
+    3) Pasar .class -> java.exe (JVM) -> Linguagem maquina
+    
