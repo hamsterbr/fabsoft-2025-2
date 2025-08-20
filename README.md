@@ -45,17 +45,19 @@ Java Extension Pack
 ### Usuário privilegiado: Supervisor / chefe
 ### Usuário administrativo: RH / TI
 
-Como usuário comum eu gostaria de visualizar quantas horas extras eu possuo
+Como usuário comum eu gostaria de registrar horas extras de trabalho
 
-Como usuário comum eu gostaria de visualizar quantas horas eu devo
+Como usuário comum eu gostaria de registrar plantões de trabalho
 
-Como usuário comum eu gostaria de visualizar um gráfico com meu histórico de horas extras e horas devidas
+Como usuário comum eu gostaria de poder visualizar minhas horas extras de trabalho
+
+Como usuário comum eu gostaria de visualizar um gráfico com meu histórico de horas extras e plantoes
 
 Como usuário comum eu gostaria de poder logar em diferentes dispositivos
 
-Como usuário comum eu gostaria de poder solicitar ao RH um novo cadastro com minha matrícula
-
 Como usuário comum eu gostaria de poder visualizar meu espelho ponto num período de 2 anos
+
+Como usuário comum eu gostaria de poder solicitar ao RH um novo cadastro com minha matrícula
 
 -----
 
@@ -65,25 +67,98 @@ Como usuário administrativo eu gostaria de visualizar os funcionários cadastra
 
 Como usuário administrativo eu gostaria poder remover funcionários cadastrados mediante a solicitações
 
-Como usuário administrativo eu gostaria de visualizar as horas devidas dos funcionários
+Como usuário administrativo eu gostaria de poder visualizar horas extras de funcionários
 
-Como usuário administrativo eu gostaria de visualizar as horas extras dos funcionários
+Como usuário administrativo eu gostaria de aprovar solicitações de horas extras dos funcionários
+
+Como usuário administrativo eu gostaria de aprovar solicitações de plantões dos funcionários
 
 Como usuário administrativo eu gostaria de poder adicionar ao sistema o espelho ponto dos funcionários
 
 Como usuário administrativo eu gostaria de poder realizar modificações nos cadastros dos funcionários consensual
 
------
+Como usuário administrativo eu gostaria de registrar horas extras de trabalho
 
-Como usuário privilegiado eu gostaria de poder visualizar as horas devidas dos funcionários
+Como usuário administrativo eu gostaria de registrar plantões de trabalho
 
-Como usuário privilegiado eu gostaria de visualizar as horas extras dos funcionários
+Como usuário administrativo eu gostaria de poder visualizar minhas horas extras de trabalho
 
-Como usuário privilegiado eu gostaria de visualizar os funcionários cadastrados
+Como usuário administrativo eu gostaria de visualizar um gráfico com meu histórico de horas extras e plantoes
 
-Como usuário privilegiado eu gostaria de solicitar alterações em cadastros de funcionários
+Como usuário administrativo eu gostaria de poder logar em diferentes dispositivos
+
+Como usuário administrativo eu gostaria de poder visualizar meu espelho ponto num período de 2 anos
 
 
+-----Aula 19/08-----
+---
+title: Diagrama de Entidades
+---
+classDiagram
+    Cliente "*" --> "1" Cidade
+    Revisao "*" --> "1" Cliente
+    Revisao "*" --> "1" Carro
+    Revisao "1" --> "*" ItemRevisao
+    ItemRevisao "*" --> "1" Peca
+    namespace entity {
+      class UserComum{
+          +matricula : long
+          +nomeCompleto : String
+          +contato : String
+          +totalHorasExtras : float
+          +totalHorasPlantao : float
+          -----
+          +getMatricula():long
+          +setMatricula (matricula:long):void
+          +getNomeCompleto():String
+          +setNomeCompleto(nomeCompleto:String):void
+          +getContato():String
+          +setContato(contato:String):void
+          +getTotalHorasExtras():float
+          +setTotalHorasExtras(totalHorasExtras:float):void
+          +getTotalHorasPlantao():float
+          +setTotalHorasPlantao(totalHorasPlantao:float):void
+      }
+      class UserAdm{
+          +matricula : long
+          +nomeCompleto : String
+          +contato : String
+          +totalHorasExtras : float
+          +totalHorasPlantao : float
+          -----
+          +getMatricula():long
+          +setMatricula (matricula:long):void
+          +getNomeCompleto():String
+          +setNomeCompleto(nomeCompleto:String):void
+          +getContato():String
+          +setContato(contato:String):void
+          +getTotalHorasExtras():float
+          +setTotalHorasExtras(totalHorasExtras:float):void
+          +getTotalHorasPlantao():float
+          +setTotalHorasPlantao(totalHorasPlantao:float):void
+      }
+      class Solicitao{
+          +id : int
+          +data : Date
+          +horaInicio : Time
+          +horaFim : Time
+          +tipo : String
+          +valorCalculado : float
+          -----
+          +getId():int
+          +setId(id:int):void
+          +getData():Date
+          +setData(data:Date):void
+          +getHoraInicio():Time
+          +setHoraInicio(horaInicio:Time):void
+          +getHoraFim():Time
+          +setHoraFim(horaFim:Time):void
+          +getTipo():String
+          +setTipo(tipo:String):void
+          +getValorCalculado():float
+          +setValorCalculado(valorCalculado:float):void
+      }
+    }
 
 
 
@@ -93,4 +168,5 @@ Como usuário privilegiado eu gostaria de solicitar alterações em cadastros de
 
 
     
+
 
