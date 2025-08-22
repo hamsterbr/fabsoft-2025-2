@@ -89,8 +89,8 @@ Como usuário administrativo eu gostaria de poder logar em diferentes dispositiv
 
 Como usuário administrativo eu gostaria de poder visualizar meu espelho ponto num período de 2 anos
 
-
 -----Aula 19/08-----
+```mermaid
 ---
 title: Diagrama de Entidades
 ---
@@ -159,7 +159,7 @@ classDiagram
           +setValorCalculado(valorCalculado:float):void
       }
     }
-
+```
 
 
 
@@ -168,5 +168,6 @@ classDiagram
 
 
     
+
 
 
