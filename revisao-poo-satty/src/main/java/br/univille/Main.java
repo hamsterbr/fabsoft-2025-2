@@ -2,6 +2,7 @@ package br.univille;
 
 import br.univille.entity.Cidade;
 import br.univille.entity.Cliente;
+import br.univille.entity.Pokemon;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,15 @@ public class Main {
         Cidade cidade = new Cidade("Xique-Xique");
 
         cliente.setCidade(cidade); //ASSOCIAÇÃO 01
+
+        var haunter = new Pokemon("haunter");
+        var trevenant = new Pokemon("trevenant");
+
+        cliente.getListaPokemon().add(haunter);
+        cliente.getListaPokemon().add(trevenant);
+        
+
+        System.out.println();
 
     }
 }
