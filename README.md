@@ -94,10 +94,7 @@ Como usuário administrativo eu gostaria de poder visualizar meu espelho ponto n
 ---
 title: Diagrama de Entidades
 ---
-classDiagram
-    UserComum "*" --> "1" Cidade
-    UserAdm "*" --> "1" Cliente
-    
+classDiagram    
     namespace entity {
       class UserComum{
           +matricula : long
@@ -166,6 +163,7 @@ classDiagram
 
 
     
+
 
 
 
