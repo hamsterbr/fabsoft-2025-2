@@ -136,7 +136,7 @@ classDiagram
           +getTotalHorasPlantao():float
           +setTotalHorasPlantao(totalHorasPlantao:float):void
       }
-      class Solicitao{
+      class Solicitacao{
           +id : int
           +data : Date
           +horaInicio : Time
@@ -178,6 +178,7 @@ classDiagram
 
 
     
+
 
 
 
