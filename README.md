@@ -94,7 +94,11 @@ Como usuário administrativo eu gostaria de poder visualizar meu espelho ponto n
 ---
 title: Diagrama de Entidades
 ---
-classDiagram    
+classDiagram
+    UserComum "1" <-- "*" Solicitacao
+    UserAdm "1" <-- "*" Solicitacao
+    Solicitacao "*" --> "1" Tipo
+
     namespace entity {
       class UserComum{
           +matricula : long
@@ -132,13 +136,12 @@ classDiagram
           +getTotalHorasPlantao():float
           +setTotalHorasPlantao(totalHorasPlantao:float):void
       }
-      class Solicitao{
+      class Solicitacao{
           +id : int
           +data : Date
           +horaInicio : Time
           +horaFim : Time
-          +tipo : String
-          +valorCalculado : float
+          +descricao : String
           -----
           +getId():int
           +setId(id:int):void
@@ -153,6 +156,18 @@ classDiagram
           +getValorCalculado():float
           +setValorCalculado(valorCalculado:float):void
       }
+      class Tipo{
+          +id : int
+          +valorHora : float
+          +tipo : String
+          -----
+          +getId():int
+          +setId(id:int):void
+          +getValorHora():float
+          +setValorHora(valorHora:float):void
+          +getTipo():String
+          +setTipo(tipo:String):void
+      }
     }
 ```
 
@@ -163,6 +178,10 @@ classDiagram
 
 
     
+
+
+
+
 
 
 
