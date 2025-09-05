@@ -3,19 +3,28 @@ package br.univille.fabsoft_backend.entity;
 import java.sql.Date;
 import java.sql.Time;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Solicitacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
+
     private Time horaInicio;
     private Time horaFim;
+    @Column(length = 1000)
     private String descricao;
 
     public int getId() {
