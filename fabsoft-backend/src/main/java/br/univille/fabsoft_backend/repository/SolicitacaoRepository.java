@@ -5,5 +5,7 @@ import org.springframework.stereotype.Repository;
 import br.univille.fabsoft_backend.entity.Solicitacao;
 
 @Repository
-public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Integer> {
+public interface SolicitacaoRepository
+    extends JpaRepository<Solicitacao, Long> {
+    
 }

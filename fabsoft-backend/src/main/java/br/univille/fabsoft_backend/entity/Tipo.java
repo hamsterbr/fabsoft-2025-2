@@ -9,14 +9,14 @@ import jakarta.persistence.Id;
 public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private float valorHora;
     private String tipo;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public float getValorHora() {
