@@ -6,4 +6,6 @@ import br.univille.fabsoft_backend.entity.Solicitacao;
 public interface SolicitacaoService {
 
     List<Solicitacao> getAll();
+
+    Solicitacao update(long id, Solicitacao solicitacao);
 }
