@@ -1,3 +1,5 @@
+Leonardo & Satty
+
 Fábrica de Software 2025/1
 
 # Propostas de projeto
@@ -178,6 +180,7 @@ classDiagram
 
 
     
+
 
 
 
