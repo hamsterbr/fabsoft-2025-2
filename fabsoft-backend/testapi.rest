@@ -1,0 +1,25 @@
+### GET Solicitacoes
+GET http://localhost:8080/api/v1/solicitacoes
+Content-Type: application/json
+
+### POST Solicitacoes
+POST http://localhost:8080/api/v1/solicitacoes
+Content-Type: application/json
+
+{
+"id":0,
+
+}
+
+### PUT Solicitacoes
+PUT http://localhost:8080/api/v1/solicitacoes/1
+Content-Type: application/json
+
+{
+"id":0,
+
+}
+
+### DELETE Solicitacoes
+DELETE http://localhost:8080/api/v1/solicitacoes
+Content-Type: application/json
