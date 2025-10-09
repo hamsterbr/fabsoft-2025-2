@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping("/api/v1/solicitacoes")
-public class SolicitacaoController {
+public class UsercomumController {
 
     @Autowired
     private SolicitacaoService service;

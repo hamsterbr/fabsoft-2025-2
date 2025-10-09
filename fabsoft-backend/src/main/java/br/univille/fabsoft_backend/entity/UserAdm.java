@@ -13,7 +13,6 @@ public class UserAdm {
     private String nomeCompleto;
     private String contato;
 
-    
     public long getMatricula() {
         return matricula;
     }

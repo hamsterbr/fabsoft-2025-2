@@ -2,7 +2,6 @@ package br.univille.fabsoft_backend.entity;
 
 import java.util.Date;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
@@ -61,5 +60,4 @@ public class Solicitacao {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
 }

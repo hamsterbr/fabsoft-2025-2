@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import br.univille.fabsoft_backend.entity.Solicitacao;
 import br.univille.fabsoft_backend.repository.SolicitacaoRepository;
 import br.univille.fabsoft_backend.service.SolicitacaoService;
+import jakarta.validation.Valid;
 
 @Service
 public class SolicitacaoServiceimpl 
@@ -18,6 +19,18 @@ public class SolicitacaoServiceimpl
     @Override
     public List<Solicitacao> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Solicitacao update(long id, Solicitacao solicitacao) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    @Override
+    public @Valid Solicitacao save(Solicitacao solicitacao) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
 
