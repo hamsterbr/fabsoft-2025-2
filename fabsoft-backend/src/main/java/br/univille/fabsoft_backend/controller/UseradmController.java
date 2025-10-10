@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("/api/v1/solicitacoes")
+@RequestMapping("/api/v1/useradm")
 public class UseradmController {
 
     @Autowired
