@@ -35,7 +35,7 @@ public class Solicitacao {
     }
     public void setId(long id) {
         this.id = id;
-    }
+    } 
     public Date getData() {
         return data;
     }
