@@ -31,7 +31,5 @@ public class UserComum {
     }
     public void setContato(String contato) {
         this.contato = contato;
-    }
-
-    
+    }    
 }
