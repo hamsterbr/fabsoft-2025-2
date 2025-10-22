@@ -19,7 +19,7 @@ export class UsercomumComponent{
   constructor(private UsercomumService: UsercomumService, private router: Router){}
 
   ngOnInit(){
-    console.log('Carregando clientes...')
+    console.log('Carregando usuarios comuns...')
     this.UsercomumService.getUsercomum().subscribe(usercomuns => {
       this.listaUsercomum = usercomuns
     })
