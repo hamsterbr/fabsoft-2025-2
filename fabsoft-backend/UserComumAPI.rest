@@ -1,0 +1,27 @@
+### GET UsersComum
+GET http://localhost:8080/api/v1/userscomum
+Content-Type: application/json
+
+### POST UsersComum
+POST http://localhost:8080/api/v1/userscomum
+Content-Type: application/json
+
+{
+  "matricula": " ",
+  "nomeCompleto": " ",
+  "contato": " "
+}
+
+### PUT UsersComum
+PUT http://localhost:8080/api/v1/userscomum/1
+Content-Type: application/json
+
+{
+  "matricula": " ",
+  "nomeCompleto": " ",
+  "contato": " "
+}
+
+### DELETE UsersComum
+DELETE http://localhost:8080/api/v1/userscomum/1
+Content-Type: application/json

@@ -19,30 +19,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.univille.fabsoft_backend.entity.Solicitacao;
-import br.univille.fabsoft_backend.service.SolicitacaoService;
+import br.univille.fabsoft_backend.entity.Tipo;
+import br.univille.fabsoft_backend.service.TipoService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/solicitacoes")
-public class SolicitacaoController {
+@RequestMapping("/api/v1/tipos")
+public class TipoController {
 
     @Autowired
-    private SolicitacaoService service;
+    private TipoService service;
 
     
     @GetMapping
-    public ResponseEntity<List<Solicitacao>> getSolicitacoes(){
+    public ResponseEntity<List<Tipo>> getSolicitacoes(){
         
-        var listaSolicitacoes = service.getAll();
+        var listaTipos = service.getAll();
 
-        return new ResponseEntity<List<Solicitacao>>(listaSolicitacoes,
+        return new ResponseEntity<List<Tipo>>(listaTipos,
             HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Solicitacao> save(@Valid @RequestBody Solicitacao solicitacao, BindingResult result){
-        if(solicitacao == null){
+    public ResponseEntity<Tipo> save(@Valid @RequestBody Tipo tipo, BindingResult result){
+        if(tipo == null){
             return ResponseEntity.badRequest().build();
         }
         if (result.hasErrors()) {
@@ -51,27 +51,27 @@ public class SolicitacaoController {
                     .map(error -> error.getDefaultMessage())
                     .collect(Collectors.joining(" "));
             headers.add("Erro", errorMessages);
-            return new ResponseEntity<Solicitacao>(solicitacao,headers,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<Tipo>(tipo,headers,HttpStatus.BAD_REQUEST);
         }
-        if(solicitacao.getId() == 0){
-            solicitacao = service.save(solicitacao);
-            return new ResponseEntity<Solicitacao>(solicitacao,HttpStatus.OK);
+        if(tipo.getId() == 0){
+            tipo = service.save(tipo);
+            return new ResponseEntity<Tipo>(tipo,HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Solicitacao> 
-        update(@RequestBody Solicitacao solicitacao,
+    public ResponseEntity<Tipo> 
+        update(@RequestBody Tipo tipo,
             @PathVariable long id){
 
-        if(id <= 0 || solicitacao == null){
+        if(id <= 0 || tipo == null){
             return ResponseEntity.badRequest().build();
         }
 
         try {
-            solicitacao = service.update(id, solicitacao);
-            return new ResponseEntity<Solicitacao>(solicitacao,
+            tipo = service.update(id, tipo);
+            return new ResponseEntity<Tipo>(tipo,
                     HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
@@ -80,7 +80,7 @@ public class SolicitacaoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Solicitacao> 
+    public ResponseEntity<Tipo> 
         update(@PathVariable long id){
 
         if(id <= 0){
@@ -88,8 +88,8 @@ public class SolicitacaoController {
         }
 
         try {
-            var solicitacao = service.delete(id);
-            return new ResponseEntity<Solicitacao>(solicitacao,HttpStatus.OK);
+            var tipo = service.delete(id);
+            return new ResponseEntity<Tipo>(tipo,HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
