@@ -1,0 +1,27 @@
+### GET UsersAdm
+GET http://localhost:8080/api/v1/usersadm
+Content-Type: application/json
+
+### POST UsersAdm
+POST http://localhost:8080/api/v1/usersadm
+Content-Type: application/json
+
+{
+  "matricula": " ",
+  "nomeCompleto": " ",
+  "contato": " "
+}
+
+### PUT UsersAdm
+PUT http://localhost:8080/api/v1/usersadm/1
+Content-Type: application/json
+
+{
+  "matricula": " ",
+  "nomeCompleto": " ",
+  "contato": " "
+}
+
+### DELETE UsersAdm
+DELETE http://localhost:8080/api/v1/usersadm/1
+Content-Type: application/json

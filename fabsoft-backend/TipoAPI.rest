@@ -1,0 +1,27 @@
+### GET Tipos
+GET http://localhost:8080/api/v1/tipos
+Content-Type: application/json
+
+### POST Tipos
+POST http://localhost:8080/api/v1/tipos
+Content-Type: application/json
+
+{
+  "id": " ",
+  "valorHora": " ",
+  "tipo": " "
+}
+
+### PUT Tipos
+PUT http://localhost:8080/api/v1/tipos/1
+Content-Type: application/json
+
+{
+  "id": " ",
+  "valorHora": " ",
+  "tipo": " "
+}
+
+### DELETE Tipos
+DELETE http://localhost:8080/api/v1/tipos/1
+Content-Type: application/json

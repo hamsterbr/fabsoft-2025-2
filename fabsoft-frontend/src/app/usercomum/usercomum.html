@@ -1,0 +1,20 @@
+<main class="container">
+    <h2>Users Comum</h2>
+    <button class="btn btn-primary" (click)="novo()">Novo</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Contato</th>
+                <th>Matricula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umUserComum of listaUsercomum">
+                <td>{{umUserComum.nomeCompleto}}</td>
+                <td>{{umUserComum.contato}}</td>
+                <td>{{umUserComum.matricula}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
