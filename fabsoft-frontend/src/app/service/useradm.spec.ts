@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { Usercomum } from '../model/usercomum';
+import { Useradm } from '../model/useradm';
 
-describe('Usercomum', () => {
-  let service: Usercomum;
+describe('Useradm', () => {
+  let service: Useradm;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Usercomum);
+    service = TestBed.inject(Useradm);
   });
 
   it('should be created', () => {

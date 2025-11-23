@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/* Import Bootstrap para estilo global */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+/* Nota: Para ícones, o arquivo deve ser ajustado para importar 'bootstrap-icons.css' 
+   se estiver usando a biblioteca. Estou usando classes 'bi' como placeholder. */
+
+/* Estilos globais */
+body {
+    background-color: #f8f9fa; /* Fundo claro para melhor visual */
+    padding-top: 56px; /* Ajuste para o navbar fixo */
+}

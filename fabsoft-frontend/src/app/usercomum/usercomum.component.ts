@@ -16,7 +16,10 @@ export class UsercomumComponent{
 
   listaUsercomum: Usercomum[] = []
 
-  constructor(private UsercomumService: UsercomumService, private router: Router){}
+  constructor(
+    private UsercomumService: UsercomumService, 
+    private router: Router
+  ){}
 
   ngOnInit(){
     console.log('Carregando usuarios comuns...')

@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Usercomum } from '../model/usercomum';
 
-describe('Usercomum', () => {
-  let component: Usercomum;
-  let fixture: ComponentFixture<Usercomum>;
+import { FormUseradm } from './form-useradm';
+
+describe('FormUseradm', () => {
+  let component: FormUseradm;
+  let fixture: ComponentFixture<FormUseradm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Usercomum]
+      imports: [FormUseradm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Usercomum);
+    fixture = TestBed.createComponent(FormUseradm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

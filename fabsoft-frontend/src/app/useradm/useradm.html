@@ -1,0 +1,46 @@
+<main class="container py-4">
+    <h2 class="mb-4 text-warning">Gestão de Usuários Administrativos</h2>
+    
+    <div *ngIf="feedbackMessage" 
+         class="alert alert-{{feedbackMessage.type}} alert-dismissible fade show shadow" role="alert">
+        {{ feedbackMessage.message }}
+        <button type="button" class="btn-close" (click)="feedbackMessage = null" aria-label="Close"></button>
+    </div>
+
+    <div class="mb-4 d-flex justify-content-end">
+        <a class="btn btn-warning shadow-sm text-dark" [routerLink]="['/useradm/novo']">
+            <i class="bi bi-plus-circle"></i> Novo Administrador
+        </a>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Nome Completo</th>
+                    <th scope="col">Contato</th>
+                    <th scope="col" class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let umUserAdm of listaUseradm">
+                    <td>{{umUserAdm.matricula}}</td>
+                    <td>{{umUserAdm.nomeCompleto}}</td>
+                    <td>{{umUserAdm.contato}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-info me-2" disabled title="Editar indisponível">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteUseradm(umUserAdm.matricula)" title="Excluir">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="listaUseradm.length === 0">
+                    <td colspan="4" class="text-center text-muted">Nenhum usuário administrativo cadastrado.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>

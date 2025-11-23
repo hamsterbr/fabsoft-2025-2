@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('fabsoft-frontend');
+
+  constructor(
+    private router: Router
+  ){}
+
+  irParaUsercomum() {
+    this.router.navigate(['/usercomum']);
+  }
+
+  irParaUseradm() {
+    this.router.navigate(['/useradm']);
+  }
+
 }

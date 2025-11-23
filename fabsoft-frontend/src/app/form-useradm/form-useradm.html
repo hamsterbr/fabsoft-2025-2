@@ -1,0 +1,83 @@
+<main class="container py-4">
+    <h2 class="mb-4 text-warning">Cadastro de Usuário Administrativo</h2>
+    
+    <div *ngIf="feedbackMessage" 
+         class="alert alert-{{feedbackMessage.type}} alert-dismissible fade show" role="alert">
+        {{ feedbackMessage.message }}
+        <button type="button" class="btn-close" (click)="feedbackMessage = null" aria-label="Close"></button>
+    </div>
+
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <form #userForm="ngForm" (ngSubmit)="salvar(userForm)">
+                
+                <div class="mb-3">
+                    <label for="txtMatricula" class="form-label">Matrícula</label>
+                    <input type="number" 
+                        [(ngModel)]="useradm.matricula"
+                        name="matricula"
+                        class="form-control" 
+                        id="txtMatricula"
+                        placeholder="Insira a matrícula (apenas números)"
+                        min="1"
+                        #matricula="ngModel"
+                        required
+                        [class.is-invalid]="matricula.invalid && matricula.touched">
+                    <div *ngIf="matricula.invalid && matricula.touched" class="invalid-feedback">
+                        <div *ngIf="matricula.errors?.['required']">
+                            A Matrícula é obrigatória.
+                        </div>
+                        <div *ngIf="matricula.errors?.['min']">
+                            A Matrícula deve ser um número positivo.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="txtNomeCompleto" class="form-label">Nome Completo</label>
+                    <input type="text" 
+                        [(ngModel)]="useradm.nomeCompleto"
+                        name="nomeCompleto"
+                        class="form-control" 
+                        id="txtNomeCompleto"
+                        placeholder="Insira o nome completo do usuário"
+                        #nomeCompleto="ngModel"
+                        required
+                        [class.is-invalid]="nomeCompleto.invalid && nomeCompleto.touched">
+                    <div *ngIf="nomeCompleto.invalid && nomeCompleto.touched" class="invalid-feedback">
+                        <div *ngIf="nomeCompleto.errors?.['required']">
+                            O Nome Completo é obrigatório.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtContato" class="form-label">Contato</label>
+                    <input type="text" 
+                        [(ngModel)]="useradm.contato"
+                        name="contato"
+                        class="form-control" 
+                        id="txtContato"
+                        placeholder="Insira o contato (ex: email ou telefone)"
+                        #contato="ngModel"
+                        required
+                        [class.is-invalid]="contato.invalid && contato.touched">
+                    <div *ngIf="contato.invalid && contato.touched" class="invalid-feedback">
+                        <div *ngIf="contato.errors?.['required']">
+                            O Contato é obrigatório.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-warning text-dark mt-3 shadow-sm" [disabled]="userForm.invalid">
+                        <i class="bi bi-save"></i> Salvar
+                    </button>
+                    <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="router.navigate(['useradm'])">
+                        <i class="bi bi-arrow-left"></i> Voltar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
