@@ -1,20 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usercomum } from '../model/usercomum';
 import { UsercomumService } from '../service/usercomum.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-usercomum',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, RouterLink],
   templateUrl: './usercomum.html',
   styleUrl: './usercomum.css',
-  providers: [UsercomumService, Router]
+  providers: [UsercomumService]
 })
-export class UsercomumComponent{
+export class UsercomumComponent implements OnInit{
+deleteUsuario(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
-  listaUsercomum: Usercomum[] = []
+listaUsercomum: Usercomum[] = []
+feedbackMessage: any;
+listaUsuarios: any;
 
   constructor(
     private UsercomumService: UsercomumService, 

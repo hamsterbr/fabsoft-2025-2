@@ -1,20 +1,46 @@
-<main class="container">
-    <h2>Users Comum</h2>
-    <button class="btn btn-primary" (click)="novo()">Novo</button>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Contato</th>
-                <th>Matricula</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umUserComum of listaUsercomum">
-                <td>{{umUserComum.nomeCompleto}}</td>
-                <td>{{umUserComum.contato}}</td>
-                <td>{{umUserComum.matricula}}</td>
-            </tr>
-        </tbody>
-    </table>
+<main class="container py-4">
+    <h2 class="mb-4 text-primary">Gestão de Usuários Comuns</h2>
+    
+    <div *ngIf="feedbackMessage" 
+         class="alert alert-{{feedbackMessage.type}} alert-dismissible fade show shadow" role="alert">
+        {{ feedbackMessage.message }}
+        <button type="button" class="btn-close" (click)="feedbackMessage = null" aria-label="Close"></button>
+    </div>
+
+    <div class="mb-4 d-flex justify-content-end">
+        <a class="btn btn-primary shadow-sm text-white" [routerLink]="['/usercomum/novo']">
+            <i class="bi bi-plus-circle"></i> Novo Usuário
+        </a>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Nome Completo</th>
+                    <th scope="col">Contato</th>
+                    <th scope="col" class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let umUsuario of listaUsuarios">
+                    <td>{{umUsuario.matricula}}</td>
+                    <td>{{umUsuario.nomeCompleto}}</td>
+                    <td>{{umUsuario.contato}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-info me-2" disabled title="Editar indisponível">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteUsuario(umUsuario.id)" title="Excluir">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="listaUsuarios.length === 0">
+                    <td colspan="4" class="text-center text-muted">Nenhum usuário comum cadastrado.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>

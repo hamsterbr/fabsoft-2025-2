@@ -2,14 +2,13 @@
     <h2>Novo usuário comum</h2>
     <div class="card">
         <div class="card-body">
-            <div class="form-group">
-                <label for="txtMatricula">Matrícula</label>
-                <input type="text" 
-                    [(ngModel)]="usercomum.matricula"
-                    class="form-control" 
-                    id="txtMatricula">
-            </div>
+            <form #formUsercomum="ngForm" (ngSubmit)="salvar(formUsercomum)"> 
+                <div class="form-group">
+                    <label for="txtMatricula">Matrícula</label>
+                    <input type="text" [(ngModel)]="usercomum.matricula"name="matricula" class="form-control" id="txtMatricula" required>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" [disabled]="formUsercomum.invalid">Cadastrar</button>
+            </form>
         </div>
-        <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>
     </div>
 </main>

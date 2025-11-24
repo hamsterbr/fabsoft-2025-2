@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/usercomum" routerLinkActive="active" (click)="irParaUsercomum()">Usuário Comum</a>
+                <a class="nav-link" [routerLink]="['/usercomum']" routerLinkActive="active">Usuário Comum</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/useradm" routerLinkActive="active" (click)="irParaUseradm()">Usuário Admin</a>
+                <a class="nav-link" [routerLink]="['/useradm']" routerLinkActive="active">Usuário Admin</a>
             </li>
             </ul>
         </div>
